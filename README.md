@@ -5,3 +5,5 @@ The libraries used in this application are pyside6, pyqt6 and mysql.connector. H
 I have used Qt Designer to generate the UI for my applications and then converted the ui files generated to python using the command: 
 ### pyuic6 -o <file_name>.py <file_name>.ui
 
+The file names ending in _window are the functional part of the program.
+The files names without _window are ui files converted to python files.
