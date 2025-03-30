@@ -111,6 +111,10 @@ class FinalInvoiceWindow(QDialog):
 
         self.ui.uploadToDBButton.setEnabled(False)
         self.invoice_details.clear()
+    
+    #So that the information is cleared even if the changes are not committed to the database
+    def closeEvent(self, event):
+        self.invoice_details.clear()
 
     def __del__(self):
         self.connection.close()
