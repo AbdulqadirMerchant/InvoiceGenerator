@@ -92,6 +92,13 @@ class InvoiceDetailsWindow(QDialog):
             infoBox.exec()
             return
 
+        if self.ui.tableWidget.rowCount() == 0:
+            infoBox = QMessageBox()
+            infoBox.setWindowTitle("Missing Products")
+            infoBox.setText("Products are needed to generate an invoice!")
+            infoBox.exec()
+            return
+
         self.final_invoice_window = FinalInvoiceWindow(invoice_details, client_name)
 
         # Load all invoice info into the final invoice window
